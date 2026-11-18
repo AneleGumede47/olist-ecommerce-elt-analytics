@@ -1,4 +1,4 @@
-# E-Commerce Revenue, Logistics SLA & Retention Warehouse
+# E-Commerce Revenue, Logistics SLA and Retention Warehouse
 
 Designed and built a **Medallion ELT pipeline (Bronze → Silver → Gold)** and **Star Schema data warehouse** analyzing **100,000+ marketplace orders** to diagnose revenue seasonality, last-mile delivery bottlenecks, and customer retention gaps
 
