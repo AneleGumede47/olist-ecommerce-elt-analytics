@@ -1,27 +1,27 @@
 # E-Commerce Revenue, Logistics SLA and Retention Warehouse
 
-Designed and built a **Medallion ELT pipeline (Bronze → Silver → Gold)** and **Star Schema data warehouse** analyzing **100,000+ marketplace orders** to diagnose revenue seasonality, last-mile delivery bottlenecks, and customer retention gaps
+Designed and built a **Medallion ELT pipeline (Bronze → Silver → Gold)** and **Star Schema data warehouse** analyzing **100,000+ marketplace orders** to diagnose revenue seasonality, last mile delivery bottlenecks, and customer retention gaps
 
 ## Summary and Key Impact
-- **Data Architecture:** Consolidated 9 raw relational tables (~1.4M records) into an 8-table **Star Schema** (`fact_orders`, `fact_order_items`, `fact_payments`, `fact_reviews`, `dim_customers`, `dim_products`, `dim_sellers`, `dim_geolocation`) in SQLite (`olist_warehouse.db`).
+- **Data Architecture:** Consolidated 9 raw relational tables (~1.4M records) into an 8-table **Star Schema** (`fact_orders`, `fact_order_items`, `fact_payments`, `fact_reviews`, `dim_customers`, `dim_products`, `dim_sellers`, `dim_geolocation`) in SQLite (`olist_warehouse.db`)
 - **Automated Data Quality:** Removed out-of-bounds geolocation coordinates outside Brazil, deduplicated 261,831 exact geolocation rows, translated Portuguese product categories to English, and enforced foreign-key referential integrity checks.
-- **Logistics & Customer Experience:** Quantified the impact of late deliveries on customer satisfaction, linking delivery SLA breaches directly to sharp drops in 1–5 star review scores.
-- **Retention & RFM Insights:** Built SQL-driven **RFM (Recency, Frequency, Monetary)** customer segments, revealing that ~97% of buyers are one time purchasers pinpointing repeat-purchase retention as the primary growth lever.
+- **Logistics and Customer Experience:** Quantified the impact of late deliveries on customer satisfaction, linking delivery SLA breaches directly to sharp drops in 1–5 star review scores.
+- **Retention and RFM Insights:** Built SQL-driven **RFM (Recency, Frequency, Monetary)** customer segments, revealing that 97% of buyers are one time purchasers pinpointing repeat-purchase retention as the primary growth lever.
 
 ## Pipeline Architecture
 ```text
 9 Raw Source Tables (~1.4M rows)
         │
-[ Bronze Layer ]  Raw CSV ingestion + null & duplicate profiling
+[ Bronze Layer ]  Raw CSV ingestion + null and duplicate profiling
         │
-[ Silver Layer ]  Cleaning, English translation, geo-outlier removal & Star Schema
+[ Silver Layer ]  Cleaning, English translation, geo-outlier removal and Star Schema
         │
 [  Gold Layer  ]  SQLite Warehouse (olist_warehouse.db) + Business Marts (CSV)
         │
-[  Analytics   ]  SQL KPIs, RFM Segmentation & Matplotlib Visuals
+[  Analytics   ]  SQL KPIs, RFM Segmentation and Matplotlib Visuals
 ```
 
-## Key Findings & Visuals
+## Key Findings and Visuals
 
 ### 1. Monthly Revenue and Order Growth
 <img width="3265" height="1320" alt="01_monthly_revenue" src="https://github.com/user-attachments/assets/c7254cc5-2541-428b-ba27-fbf9cc3db9da" />
@@ -36,16 +36,16 @@ Designed and built a **Medallion ELT pipeline (Bronze → Silver → Gold)** and
 <img width="2670" height="1168" alt="04_rfm_segments" src="https://github.com/user-attachments/assets/e63a4b4b-689f-4235-84d2-094bd365b4bf" />
 
 ## Business Recommendations
-1. **Launch a Second-Order Loyalty Campaign:** With ~97% of buyers purchasing only once, target `Active / Promising` and `Recent High-Value` segments with time-bound post-delivery vouchers.
+1. **Launch a Second Order Loyalty Campaign:** With 97% of buyers purchasing only once, target `Active / Promising` and `Recent High-Value` segments with time-bound post-delivery vouchers.
 2. **Tighten Seller Delivery SLAs:** Flag sellers and regions driving late deliveries, as late orders cause steep drops in customer review scores.
-3. **Capitalize on Quarter 4 Seasonality:** Align seller inventory and carrier capacity ahead of November Black Friday peaks.
+3. **Capitalize on Quarter 4 Seasonality:** Align seller inventory and carrier capacity ahead of November Black Friday peaks
 
 ## Repository Structure
-- `pipeline.py` — Automated end-to-end Bronze → Silver → Gold Python ELT script
-- `olist_elt_analytics.ipynb` — Interactive profiling, SQL queries, and visualizations
-- `images/` — Exported analytical charts
-- `requirements.txt` — Python dependencies
-- `README.md` — Architecture, findings, and business recommendations
+- `pipeline.py` - Automated end to end Bronze → Silver → Gold Python ELT script
+- `olist_elt_analytics.ipynb` - Interactive profiling, SQL queries, and visualizations
+- `images/` - Exported analytical charts
+- `requirements.txt` - Python dependencies
+- `README.md` - Architecture, findings, and business recommendations
 
 ## How to Run
 1. Download and unzip the [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) from Kaggle.
