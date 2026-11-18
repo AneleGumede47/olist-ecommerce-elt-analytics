@@ -12,22 +12,18 @@ Designed and built a **Medallion ELT pipeline (Bronze → Silver → Gold)** and
 ```text
 9 Raw Source Tables (~1.4M rows)
         │
-        ▼
 [ Bronze Layer ]  Raw CSV ingestion + null & duplicate profiling
         │
-        ▼
 [ Silver Layer ]  Cleaning, English translation, geo-outlier removal & Star Schema
         │
-        ▼
 [  Gold Layer  ]  SQLite Warehouse (olist_warehouse.db) + Business Marts (CSV)
         │
-        ▼
 [  Analytics   ]  SQL KPIs, RFM Segmentation & Matplotlib Visuals
 ```
 
 ## Key Findings & Visuals
 
-### 1. Monthly Revenue & Order Growth
+### 1. Monthly Revenue and Order Growth
 <img width="3265" height="1320" alt="01_monthly_revenue" src="https://github.com/user-attachments/assets/c7254cc5-2541-428b-ba27-fbf9cc3db9da" />
 
 ### 2. Top Product Categories & Payment Mix
@@ -36,7 +32,7 @@ Designed and built a **Medallion ELT pipeline (Bronze → Silver → Gold)** and
 ### 3. Delivery Performance vs. Customer Review Scores
 <img width="2967" height="1170" alt="03_delivery_vs_reviews" src="https://github.com/user-attachments/assets/ba8ebc42-4f8c-4690-bb2e-d162f950dc12" />
 
-### 4. Customer Retention & RFM Segmentation
+### 4. Customer Retention and RFM Segmentation
 <img width="2670" height="1168" alt="04_rfm_segments" src="https://github.com/user-attachments/assets/e63a4b4b-689f-4235-84d2-094bd365b4bf" />
 
 ## Business Recommendations
