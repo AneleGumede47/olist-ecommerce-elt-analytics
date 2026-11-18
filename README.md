@@ -35,7 +35,7 @@ Designed and built a **Medallion ELT pipeline (Bronze → Silver → Gold)** and
 ### 4. Customer Retention and RFM Segmentation
 <img width="2670" height="1168" alt="04_rfm_segments" src="https://github.com/user-attachments/assets/e63a4b4b-689f-4235-84d2-094bd365b4bf" />
 
-## Business Recommendations
+## Recommendations
 1. **Launch a Second Order Loyalty Campaign:** With 97% of buyers purchasing only once, target `Active / Promising` and `Recent High-Value` segments with time-bound post-delivery vouchers.
 2. **Tighten Seller Delivery SLAs:** Flag sellers and regions driving late deliveries, as late orders cause steep drops in customer review scores.
 3. **Capitalize on Quarter 4 Seasonality:** Align seller inventory and carrier capacity ahead of November Black Friday peaks
