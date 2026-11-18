@@ -5,7 +5,7 @@ Designed and built a **Medallion ELT pipeline (Bronze → Silver → Gold)** and
 ## Summary and Key Impact
 - **Data Architecture:** Consolidated 9 raw relational tables (~1.4M records) into an 8-table **Star Schema** (`fact_orders`, `fact_order_items`, `fact_payments`, `fact_reviews`, `dim_customers`, `dim_products`, `dim_sellers`, `dim_geolocation`) in SQLite (`olist_warehouse.db`)
 - **Automated Data Quality:** Removed out-of-bounds geolocation coordinates outside Brazil, deduplicated 261,831 exact geolocation rows, translated Portuguese product categories to English, and enforced foreign-key referential integrity checks.
-- **Logistics and Customer Experience:** Quantified the impact of late deliveries on customer satisfaction, linking delivery SLA breaches directly to sharp drops in 1–5 star review scores.
+- **Logistics and Customer Experience:** Quantified the impact of late deliveries on customer satisfaction, linking delivery SLA breaches directly to sharp drops in 1-5 star review scores.
 - **Retention and RFM Insights:** Built SQL-driven **RFM (Recency, Frequency, Monetary)** customer segments, revealing that 97% of buyers are one time purchasers pinpointing repeat-purchase retention as the primary growth lever.
 
 ## Pipeline Architecture
